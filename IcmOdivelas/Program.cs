@@ -1,4 +1,5 @@
-using IcmOdivelas.Data;
+using Database.DataContext;
+using Database.Repositories;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);

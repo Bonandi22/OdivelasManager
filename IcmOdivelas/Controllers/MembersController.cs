@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Database.Repositories;
 using Microsoft.EntityFrameworkCore;
-using IcmOdivelas.Models;
-using IcmOdivelas.Data;
-using NuGet.Protocol.Core.Types;
+using Common.Models;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.AspNetCore.Mvc;
 
-namespace IcmOdivelas.Controllers
+namespace Common.Controllers
 {
     public class MembersController : Controller
     {
@@ -19,6 +14,13 @@ namespace IcmOdivelas.Controllers
         {
             _repo = repository;
         }
+
+        public IActionResult Login()
+        {
+
+            return View();
+        }
+
 
         // GET: Members
         public async Task<IActionResult> Index()
@@ -30,26 +32,35 @@ namespace IcmOdivelas.Controllers
         // GET: Members/Details/5
         public async Task<IActionResult> Details(int? id)
         {
-            if (id == null || _repo.GetMembersAsync() == null)
+            if (id == null)
             {
                 return NotFound();
             }
 
-            var member = await _repo.GetMembersAsync();
+            var member = await _repo.GetMemberByIdAsync(id.Value);
             if (member == null)
             {
                 return NotFound();
             }
 
+            var categories = await _repo.GetAllCategoryAsync();
+            var groups = await _repo.GetAllGroupAsync();
+            var situations = await _repo.GetAllSituationAsync();
+
+            ViewData["CategoryId"] = new SelectList(categories, "Id", "Name");
+            ViewData["GroupId"] = new SelectList(groups, "Id", "Name");
+            ViewData["SituationId"] = new SelectList(situations, "Id", "Name");
+
             return View(member);
         }
+
 
         // GET: Members/Create
         public async Task<IActionResult> Create()
         {
-            var categories = _repo.GetAllCategoryAsync(); 
-            var groups = _repo.GetAllGroupAsync(); 
-            var situations = _repo.GetAllSituationAsync(); 
+            var categories = await _repo.GetAllCategoryAsync(); 
+            var groups = await _repo.GetAllGroupAsync(); 
+            var situations = await _repo.GetAllSituationAsync(); 
 
             ViewData["CategoryId"] = new SelectList(await _repo.GetAllCategoryAsync(), "Id", "Name");
             ViewData["GroupId"] = new SelectList(await _repo.GetAllGroupAsync(), "Id", "Name");
@@ -68,9 +79,8 @@ namespace IcmOdivelas.Controllers
                 _repo.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
-            ViewData["CategoryId"] = new SelectList(await _repo.GetAllCategoryAsync(), "Id", "Name", member.CategoryId);
-            ViewData["GroupId"] = new SelectList(await _repo.GetAllGroupAsync(), "Id", "Name", member.GroupId);
-            ViewData["SituationId"] = new SelectList(await _repo.GetAllSituationAsync(), "Id", "Name", member.SituationId);
+            await _repo.ListDropdowns(ViewData, member.CategoryId, member.GroupId, member.SituationId);
+
             return View(member);
         }
 
@@ -87,8 +97,13 @@ namespace IcmOdivelas.Controllers
             {
                 return NotFound();
             }
+            var categories = await _repo.GetAllCategoryAsync();
+            var groups = await _repo.GetAllGroupAsync();
+            var situations = await _repo.GetAllSituationAsync();
 
-            await _repo.ListDropdowns(ViewData, member.CategoryId, member.GroupId, member.SituationId);
+            ViewData["CategoryId"] = new SelectList(await _repo.GetAllCategoryAsync(), "Id", "Name");
+            ViewData["GroupId"] = new SelectList(await _repo.GetAllGroupAsync(), "Id", "Name");
+            ViewData["SituationId"] = new SelectList(await _repo.GetAllSituationAsync(), "Id", "Name");
 
             return View(member);
         }
@@ -109,7 +124,7 @@ namespace IcmOdivelas.Controllers
             {
                 try
                 {
-                    _repo.Update(member);
+                   _repo.Update(member);
                     _repo.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -125,7 +140,6 @@ namespace IcmOdivelas.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            await _repo.ListDropdowns(ViewData, member.CategoryId, member.GroupId, member.SituationId);
 
             return View(member);
         }
@@ -172,5 +186,8 @@ namespace IcmOdivelas.Controllers
             var member =  _repo.GetMemberByIdAsync(id);
             return member != null;
         }
+        
+
+
     }
 }

@@ -13,6 +13,14 @@
       "PackagePath": "staticwebassets\\css\\custom.css"
     },
     {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\css\\footer.css",
+      "PackagePath": "staticwebassets\\css\\footer.css"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\css\\loginpage.css",
+      "PackagePath": "staticwebassets\\css\\loginpage.css"
+    },
+    {
       "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
@@ -31,6 +39,62 @@
     {
       "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\Odivelas3.jpeg",
       "PackagePath": "staticwebassets\\image\\Odivelas3.jpeg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\cias 2.png",
+      "PackagePath": "staticwebassets\\image\\cias 2.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\cias 3.png",
+      "PackagePath": "staticwebassets\\image\\cias 3.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\icm.jpg",
+      "PackagePath": "staticwebassets\\image\\icm.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\icm1.jpg",
+      "PackagePath": "staticwebassets\\image\\icm1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\icm3.jpg",
+      "PackagePath": "staticwebassets\\image\\icm3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\icm4.jpg",
+      "PackagePath": "staticwebassets\\image\\icm4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\login-bg.png",
+      "PackagePath": "staticwebassets\\image\\login-bg.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\logo-cias.png",
+      "PackagePath": "staticwebassets\\image\\logo-cias.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\logo-maanaim.png",
+      "PackagePath": "staticwebassets\\image\\logo-maanaim.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\transferir.png",
+      "PackagePath": "staticwebassets\\image\\transferir.png"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\image\\transferir2.jpg",
+      "PackagePath": "staticwebassets\\image\\transferir2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\js\\Carousel.js",
+      "PackagePath": "staticwebassets\\js\\Carousel.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\js\\Form.js",
+      "PackagePath": "staticwebassets\\js\\Form.js"
+    },
+    {
+      "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\js\\loginpage.js",
+      "PackagePath": "staticwebassets\\js\\loginpage.js"
     },
     {
       "Id": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\IcmOdivelas\\wwwroot\\js\\site.js",

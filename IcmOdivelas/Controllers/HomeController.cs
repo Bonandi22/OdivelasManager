@@ -1,8 +1,8 @@
-﻿using IcmOdivelas.Models;
+﻿using Common.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace IcmOdivelas.Controllers
+namespace Common.Controllers
 {
     public class HomeController : Controller
     {

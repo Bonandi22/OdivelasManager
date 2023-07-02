@@ -16,64 +16,20 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\DELL\Documents\Projetos\IcmOdivelas\IcmOdivelas
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Categories/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xDcmVhdGUuY3NodG1s
+[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/GroupA.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEdyb3VwQS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Categories/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZWxldGUuY3NodG1s
+[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/GroupB.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEdyb3VwQi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Categories/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xEZXRhaWxzLmNzaHRtbA==
+[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/GroupC.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEdyb3VwQy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Categories/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Categories/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmllc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Functions/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY3Rpb25zXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Functions/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY3Rpb25zXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Functions/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY3Rpb25zXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Functions/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY3Rpb25zXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Functions/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRnVuY3Rpb25zXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEluZGV4LmNzaHRtbA==
+[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Groups/GroupD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcR3JvdXBzXEdyb3VwRC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Home/Index.cshtml]
@@ -124,6 +80,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Members/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyc1xMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
@@ -139,6 +99,10 @@ build_metadata.AdditionalFiles.CssScope =
 [C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Shared/Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3Rlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-a06cizdree
 
 [C:/Users/DELL/Documents/Projetos/IcmOdivelas/IcmOdivelas/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s

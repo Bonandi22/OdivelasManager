@@ -1,4 +1,4 @@
-﻿@model IcmOdivelas.Models.Member
+﻿@model Common.Models.Member
 
 @{
     ViewData["Title"] = "Create";
@@ -8,61 +8,68 @@
 
 <h4>Member</h4>
 <hr />
-<div class="row">
+<div class="container">
     <div class="col-md-4">
-        <form asp-action="Create">
+        <form asp-action="Create" class="row g-3">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
-                <label asp-for="Name" class="control-label"></label>
-                <input asp-for="Name" class="form-control" />
-                <span asp-validation-for="Name" class="text-danger"></span>
+                <label asp-for="Name" for="validationServer01" class="form-label"></label>
+                <input asp-for="Name" type="text" class="form-control" id="validationServer01"/>
+                <span asp-validation-for="Name" class="text-danger"></span>                
             </div>
             <div class="form-group">
-                <label asp-for="PhoneNumber" class="control-label"></label>
-                <input asp-for="PhoneNumber" class="form-control" />
+                <label asp-for="PhoneNumber" for="validationServer02" class="form-label"></label>
+                <input asp-for="PhoneNumber" type="text" class="form-control" id="validationServer02" />
                 <span asp-validation-for="PhoneNumber" class="text-danger"></span>
             </div>
+
             <div class="form-group">
-                <label asp-for="BirthDate" class="control-label"></label>
-                <input asp-for="BirthDate" class="form-control" />
+                <label asp-for="BirthDate" for="validationServer03" class="form-label"></label>
+                <input asp-for="BirthDate" class="form-control" id="validationServer03" />
                 <span asp-validation-for="BirthDate" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Address" class="control-label"></label>
-                <input asp-for="Address" class="form-control" />
+                <label asp-for="Address" class="control-label" for="validationServer03" class="form-label"></label>
+                <input asp-for="Address" type="text" class="form-control" id="validationServer03" />
                 <span asp-validation-for="Address" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="City" class="control-label"></label>
-                <input asp-for="City" class="form-control" />
+                <label asp-for="City" for="validationServer04" class="form-label"></label>
+                <input asp-for="City" type="text" class="form-control" id="validationServer04" />
                 <span asp-validation-for="City" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Region" class="control-label"></label>
-                <input asp-for="Region" class="form-control" />
+                <label asp-for="Region" for="validationServer05" class="form-label"></label>
+                <input asp-for="Region" type="text" class="form-control" id="validationServer05" />
                 <span asp-validation-for="Region" class="text-danger"></span>
             </div>
             <div class="form-group form-check">
-                <label class="form-check-label">
-                    <input class="form-check-input" asp-for="Isbaptized" /> @Html.DisplayNameFor(model => model.Isbaptized)
+                <label for="validationServer06"  class="form-check-label">
+                    <input class="form-check-input" asp-for="Isbaptized" id="validationServer06" /> @Html.DisplayNameFor(model => model.Isbaptized)
                 </label>
             </div>
             <div class="form-group">
-                <label asp-for="Nacionality" class="control-label"></label>
-                <input asp-for="Nacionality" class="form-control" />
+                <label asp-for="Nacionality" class="control-label" for="validationServer07"></label>
+                <input asp-for="Nacionality" class="form-control" type="text" class="form-control" id="validationServer07" />
                 <span asp-validation-for="Nacionality" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="CategoryId" class="control-label"></label>
-                <select asp-for="CategoryId" class ="form-control" asp-items="ViewBag.CategoryId"></select>
+                <select asp-for="CategoryId" class="form-control" asp-items="ViewBag.CategoryId">
+                    <option selected>Open this select menu</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="GroupId" class="control-label"></label>
-                <select asp-for="GroupId" class ="form-control" asp-items="ViewBag.GroupId"></select>
+                <select asp-for="GroupId" class="form-control" asp-items="ViewBag.GroupId">
+                    <option selected>Open this select menu</option>
+                </select>
             </div>
             <div class="form-group">
                 <label asp-for="SituationId" class="control-label"></label>
-                <select asp-for="SituationId" class ="form-control" asp-items="ViewBag.SituationId"></select>
+                <select asp-for="SituationId" class="form-control" asp-items="ViewBag.SituationId">
+                    <option selected>Open this select menu</option>
+                </select>
             </div>
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
@@ -75,6 +82,12 @@
     <a asp-action="Index">Back to List</a>
 </div>
 
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/Form.js" asp-append-version="true"></script>
+
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }    
 }

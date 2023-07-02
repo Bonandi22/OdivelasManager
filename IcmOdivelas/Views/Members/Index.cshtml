@@ -1,4 +1,4 @@
-﻿@model IEnumerable<IcmOdivelas.Models.Member>
+﻿@model IEnumerable<Common.Models.Member>
 
 @{
     ViewData["Title"] = "Index";
@@ -93,7 +93,7 @@
             <td>
                     @Html.DisplayFor(modelItem => item.Situation.Name)
             </td>
-                <td class="text-center">
+             <td class="text-center">
                 <a class="btn btn-outline-primary" asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                 <a class="btn btn-outline-info" asp-action="Details" asp-route-id="@item.Id">Details</a> |
                 <a class="btn btn-outline-danger"  asp-action="Delete" asp-route-id="@item.Id">Delete</a>

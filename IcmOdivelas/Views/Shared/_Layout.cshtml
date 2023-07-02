@@ -3,55 +3,179 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - IcmOdivelas</title>
+    <title>@ViewData["Title"] - Icm Odivelas</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/IcmOdivelas.styles.css" asp-append-version="true" />
+
+    <!--========== BOX ICONS ==========-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
 </head>
 <body>
-    <header>
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">IcmOdivelas</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Members" asp-action="Create">Create</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+    <!--========== Siderbar ==========-->
+    <header class="header">
+        <div class="header__container">
+            <img src="/image/login-bg.png" alt="" class="header__img">
+
+            <a href="#" class="header__logo">ICM ODivelas</a>
+
+            <div class="header__search">
+                <input type="search" placeholder="Search" class="header__input">
+                <i class='bx bx-search header__icon'></i>
             </div>
-        </nav>
+
+            <div class="header__toggle">
+                <i class='bx bx-menu' id="header-toggle"></i>
+            </div>
         </div>
     </header>
+
+    <!--========== NAV ==========-->
+    <div class="nav" id="navbar">
+        <nav class="nav__container">
+            <div>
+                <a href="#" class="nav__link nav__logo">
+                    <i class='bx bxs-disc nav__icon'></i>
+                    <span class="nav__logo-name">Odivelas</span>
+                </a>
+
+                <div class="nav__list">
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Profile</h3>
+                        <a asp-controller="Home" asp-action="Index" class="nav__link active">
+                            <i class='bx bx-home nav__icon'></i>
+                            <span class="nav__name">Home</span>
+                        </a>
+
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-user nav__icon'></i>
+                                <span class="nav__name">Profile</span>
+                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                            </a>
+
+                            <div class="nav__dropdown-collapse">
+                                <div class="nav__dropdown-content">
+                                <a class="nav__dropdown-item" asp-area="" asp-controller="Members" asp-action="Login">Account</a>
+                               </div>
+                            </div>
+                        </div>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-message-rounded nav__icon'></i>
+                            <span class="nav__name">Messages</span>
+                        </a>
+                    </div>
+
+                    <div class="nav__items">
+                        <h3 class="nav__subtitle">Menu</h3>
+
+                        <div class="nav__dropdown">
+                            <a href="#" class="nav__link">
+                                <i class='bx bx-bell nav__icon'></i>
+                                <span class="nav__name">Grupos de Assistencia</span>
+                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
+                            </a>
+
+                            <div class="nav__dropdown-collapse">
+                                <div class="nav__dropdown-content">
+                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupA">Grupo A</a>
+                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupB">Grupo B</a>
+                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupC">Grupo C</a>
+                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupD">Grupo D</a>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-compass nav__icon'></i>
+                            <span class="nav__name">Explore</span>
+                        </a>
+                        <a href="#" class="nav__link">
+                            <i class='bx bx-bookmark nav__icon'></i>
+                            <span class="nav__name">Saved</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <a href="#" class="nav__link nav__logout">
+                <i class='bx bx-log-out nav__icon'></i>
+                <span class="nav__name">Log Out</span>
+            </a>
+        </nav>
+    </div>
+
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container-fluid">
-            <div class="container">
-                &copy; 2023 - IcmOdivelas - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-            </div>
-        </div>
+    <footer>
+        @Html.Partial("Footer")
     </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
+   
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
+@*    <header>
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom box-shadow mb-3 navbar-custom rounded">
+                <div class="container-fluid">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ICM Odivelas</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Members" asp-action="Create">Register</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Members" asp-action="Login">Login</a>
+                            </li>
+                        </ul>
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Grupos de Assistencia
+                                </a>
+                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupA">Grupo A</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupB">Grupo B</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupC">Grupo C</a></li>
+                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupD">Grupo D</a></li>
+
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Entrar
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                                <li><a class="dropdown-item" asp-controller="Members" asp-action="Login">Login</a></li>
+                                <li><a class="dropdown-item" href="#">Logout</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+
+    </header>*@

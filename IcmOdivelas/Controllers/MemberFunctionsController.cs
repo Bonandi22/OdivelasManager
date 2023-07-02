@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Common.Models;
+using Database.DataContext;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
-using IcmOdivelas.Models;
 
-namespace IcmOdivelas.Controllers
+namespace Common.Controllers
 {
     public class MemberFunctionsController : Controller
     {

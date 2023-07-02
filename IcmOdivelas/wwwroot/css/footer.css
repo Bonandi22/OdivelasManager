@@ -1,0 +1,37 @@
+/* ==========================================
+    FOR DEMO PURPOSE
+  ========================================== */
+
+footer {
+    background: #0d0909;
+    color: #fff;
+}
+
+.footer-content {
+    padding: 40px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+    .footer-links ul li {
+        margin-bottom: 10px;
+    }
+
+        .footer-links ul li a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+.newsletter-form {
+    margin-top: 0px;
+}
+
+.custom-footer {
+    margin-left: 45px;
+    margin-right: 45px;
+    
+}
