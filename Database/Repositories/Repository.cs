@@ -1,5 +1,5 @@
 ﻿using Common.Models;
-using Database.DataContext;
+using Database;
 using Database.Repositories;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc.ViewFeatures;
@@ -32,7 +32,7 @@ using Microsoft.EntityFrameworkCore;
             return (_context.SaveChanges() > 0);
         }
 
-        public async Task ListDropdowns(ViewDataDictionary viewData, int? categoryId, int? groupId, int? situationId)
+    public async Task ListDropdowns(ViewDataDictionary viewData, int? categoryId, int? groupId, int? situationId)
         {            
             // Obter todas as categorias
             var categories = await _context.Categories.ToListAsync();
@@ -47,8 +47,19 @@ using Microsoft.EntityFrameworkCore;
             viewData["Situations"] = new SelectList(situations, "Id", "Name", situationId);
         }
 
-        //Member
-        public async Task<List<Member>> GetMembersAsync()
+    //User
+    public async Task<User?> GetUserByEmailAndPasswordAsync(string email, string password)
+    {
+        return await _context.Users.FirstOrDefaultAsync(u => u.Email == email && u.PasswordHash == password);
+    }
+
+    public async Task<List<User>> GetAllUsersAsync(string username)
+    {
+        return await _context.Users.ToListAsync();
+    }
+
+    //Member
+    public async Task<List<Member>> GetMembersAsync()
         {
             return await _context.Members
                 .Include(m => m.Category)
@@ -64,11 +75,6 @@ using Microsoft.EntityFrameworkCore;
                 .Include(m => m.Situation)
                 .FirstOrDefaultAsync(m => m.Id == id);
         }
-
-        //public async Task<Member?> GetMemberByIdAsync(int? id)
-        //{            
-        //    return await _context.Members.FindAsync(id);
-        //}
         public async Task<Dictionary<string, List<Member>>> GetMembersByGroupAsync()
         {
             var membersByGroup = await _context.Members
@@ -122,5 +128,7 @@ using Microsoft.EntityFrameworkCore;
         {
             return await _context.Situations.ToListAsync();
         }
-    }
+
+    
+}
 

@@ -1,10 +1,10 @@
 ﻿using Common.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace Database.DataContext
+namespace Database
 {
     public class DataContext : DbContext
-    {
+    {     
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Member> Members { get; set; }
@@ -13,6 +13,7 @@ namespace Database.DataContext
         public DbSet<Category> Categories { get; set; }
         public DbSet<Group> Groups { get; set; }
         public DbSet<Situation> Situations { get; set; }
+        public DbSet<User> Users { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

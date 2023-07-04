@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "9ypHOEXNzpbikIgVxaSW6N7jUCF3Zpe0bKEHULUeBKbdCi2+ovNzQ3C+NwCSSmMAeHYeHgF5DCosaBIfQJrG1A==",
+  "dgSpecHash": "9UeXSMw6sPr0cMpSLfJSpricIfbrb3JZJ1G4muToLRk1l+iXZ4y1LQ/78NLV4nvva/Gb8ffgC7fqPhsDQmSCdw==",
   "success": true,
   "projectFilePath": "C:\\Users\\DELL\\Documents\\Projetos\\IcmOdivelas\\Database\\Database.csproj",
   "expectedPackageFiles": [
@@ -46,6 +46,7 @@
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.entityframeworkcore.tools\\7.0.8\\microsoft.entityframeworkcore.tools.7.0.8.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.caching.abstractions\\7.0.0\\microsoft.extensions.caching.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.caching.memory\\7.0.0\\microsoft.extensions.caching.memory.7.0.0.nupkg.sha512",
+    "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.configuration\\7.0.0\\microsoft.extensions.configuration.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\7.0.0\\microsoft.extensions.configuration.abstractions.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection\\7.0.0\\microsoft.extensions.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\DELL\\.nuget\\packages\\microsoft.extensions.dependencyinjection.abstractions\\7.0.0\\microsoft.extensions.dependencyinjection.abstractions.7.0.0.nupkg.sha512",

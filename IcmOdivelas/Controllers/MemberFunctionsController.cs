@@ -1,5 +1,5 @@
 ﻿using Common.Models;
-using Database.DataContext;
+using Database;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;

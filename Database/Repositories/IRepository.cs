@@ -13,6 +13,10 @@ namespace Database.Repositories
                             int? categoryId = null, 
                             int? groupId = null, 
                             int? situationId = null);
+        //User
+        Task<User?> GetUserByEmailAndPasswordAsync(string email, string password);
+        Task<List<User>> GetAllUsersAsync(string username);
+
 
         //Member
         Task<List<Member>> GetMembersAsync();

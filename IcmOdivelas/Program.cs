@@ -1,4 +1,4 @@
-using Database.DataContext;
+using Database;
 using Database.Repositories;
 using Microsoft.EntityFrameworkCore;
 
@@ -11,28 +11,32 @@ builder.Services.AddControllers();
 // Configure the connection string
 builder.Services.AddDbContext<DataContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration
-        .GetConnectionString("Default"));
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
-
 
 builder.Services.AddScoped<IRepository, Repository>();
 
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment())
+{
+    // Add code for DbContext configuration at design time
+    using (var serviceScope = app.Services.CreateScope())
+    {
+        var dbContext = serviceScope.ServiceProvider.GetRequiredService<DataContext>();
+        dbContext.Database.Migrate();
+    }
+}
+else
 {
     app.UseExceptionHandler("/Home/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
 app.UseRouting();
-
 app.UseAuthorization();
 
 app.MapControllerRoute(
