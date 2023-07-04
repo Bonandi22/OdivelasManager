@@ -22,7 +22,7 @@ namespace Common.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("IcmOdivelas.Models.Category", b =>
+            modelBuilder.Entity("Common.Models.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -31,7 +31,6 @@ namespace Common.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -39,7 +38,7 @@ namespace Common.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Function", b =>
+            modelBuilder.Entity("Common.Models.Function", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -55,7 +54,7 @@ namespace Common.Migrations
                     b.ToTable("Functions");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Group", b =>
+            modelBuilder.Entity("Common.Models.Group", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -64,7 +63,6 @@ namespace Common.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -72,7 +70,7 @@ namespace Common.Migrations
                     b.ToTable("Groups");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Member", b =>
+            modelBuilder.Entity("Common.Models.Member", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -125,7 +123,7 @@ namespace Common.Migrations
                     b.ToTable("Members");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.MemberFunction", b =>
+            modelBuilder.Entity("Common.Models.MemberFunction", b =>
                 {
                     b.Property<int>("MemberId")
                         .HasColumnType("int");
@@ -140,7 +138,7 @@ namespace Common.Migrations
                     b.ToTable("MemberFunctions");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Situation", b =>
+            modelBuilder.Entity("Common.Models.Situation", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -149,7 +147,6 @@ namespace Common.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<string>("Name")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
@@ -157,21 +154,52 @@ namespace Common.Migrations
                     b.ToTable("Situations");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Member", b =>
+            modelBuilder.Entity("Common.Models.User", b =>
                 {
-                    b.HasOne("IcmOdivelas.Models.Category", "Category")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<DateTime>("CreatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("IsActive")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedAt")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Username")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Users");
+                });
+
+            modelBuilder.Entity("Common.Models.Member", b =>
+                {
+                    b.HasOne("Common.Models.Category", "Category")
                         .WithMany("Members")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IcmOdivelas.Models.Group", "Group")
+                    b.HasOne("Common.Models.Group", "Group")
                         .WithMany("Members")
                         .HasForeignKey("GroupId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IcmOdivelas.Models.Situation", "Situation")
+                    b.HasOne("Common.Models.Situation", "Situation")
                         .WithMany("Members")
                         .HasForeignKey("SituationId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -184,15 +212,15 @@ namespace Common.Migrations
                     b.Navigation("Situation");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.MemberFunction", b =>
+            modelBuilder.Entity("Common.Models.MemberFunction", b =>
                 {
-                    b.HasOne("IcmOdivelas.Models.Function", "Function")
+                    b.HasOne("Common.Models.Function", "Function")
                         .WithMany("MemberFunctions")
                         .HasForeignKey("FunctionId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("IcmOdivelas.Models.Member", "Member")
+                    b.HasOne("Common.Models.Member", "Member")
                         .WithMany("MemberFunctions")
                         .HasForeignKey("MemberId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -203,27 +231,27 @@ namespace Common.Migrations
                     b.Navigation("Member");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Category", b =>
+            modelBuilder.Entity("Common.Models.Category", b =>
                 {
                     b.Navigation("Members");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Function", b =>
+            modelBuilder.Entity("Common.Models.Function", b =>
                 {
                     b.Navigation("MemberFunctions");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Group", b =>
+            modelBuilder.Entity("Common.Models.Group", b =>
                 {
                     b.Navigation("Members");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Member", b =>
+            modelBuilder.Entity("Common.Models.Member", b =>
                 {
                     b.Navigation("MemberFunctions");
                 });
 
-            modelBuilder.Entity("IcmOdivelas.Models.Situation", b =>
+            modelBuilder.Entity("Common.Models.Situation", b =>
                 {
                     b.Navigation("Members");
                 });

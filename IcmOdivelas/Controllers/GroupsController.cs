@@ -1,13 +1,10 @@
-﻿using Common.Models;
-using Database.Repositories;
+﻿using Database.Repositories;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 
-namespace Common.Controllers
+namespace IcmOdivelas.Controllers
 {
     public class GroupsController : Controller
-    {        
+    {
         private readonly IRepository _repo;
 
         public GroupsController(IRepository repository)

@@ -4,8 +4,17 @@ using Microsoft.EntityFrameworkCore;
 namespace Database
 {
     public class DataContext : DbContext
-    {     
-        public DataContext(DbContextOptions<DataContext> options) : base(options) { }
+    { 
+        public DataContext() { }
+        public DataContext(DbContextOptions options) : base(options) { }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder options)
+        {
+            if (!options.IsConfigured)
+            {
+                options.UseSqlServer("Server=localhost\\MSSQLSERVER02;Database=IcmOdivelasDb;Trusted_Connection=True;encrypt=false;");
+            }
+        }
 
         public DbSet<Member> Members { get; set; }
         public DbSet<Function> Functions { get; set; }

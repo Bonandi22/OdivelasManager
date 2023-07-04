@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 
-namespace Common.Controllers
+namespace IcmOdivelas.Controllers
 {
     public class MemberFunctionsController : Controller
     {
@@ -157,14 +157,14 @@ namespace Common.Controllers
             {
                 _context.MemberFunctions.Remove(memberFunction);
             }
-            
+
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MemberFunctionExists(int id)
         {
-          return (_context.MemberFunctions?.Any(e => e.MemberId == id)).GetValueOrDefault();
+            return (_context.MemberFunctions?.Any(e => e.MemberId == id)).GetValueOrDefault();
         }
     }
 }

@@ -4,7 +4,7 @@ using Common.Models;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Common.Controllers
+namespace IcmOdivelas.Controllers
 {
     public class MembersController : Controller
     {
@@ -58,9 +58,9 @@ namespace Common.Controllers
         // GET: Members/Create
         public async Task<IActionResult> Create()
         {
-            var categories = await _repo.GetAllCategoryAsync(); 
-            var groups = await _repo.GetAllGroupAsync(); 
-            var situations = await _repo.GetAllSituationAsync(); 
+            var categories = await _repo.GetAllCategoryAsync();
+            var groups = await _repo.GetAllGroupAsync();
+            var situations = await _repo.GetAllSituationAsync();
 
             ViewData["CategoryId"] = new SelectList(await _repo.GetAllCategoryAsync(), "Id", "Name");
             ViewData["GroupId"] = new SelectList(await _repo.GetAllGroupAsync(), "Id", "Name");
@@ -124,7 +124,7 @@ namespace Common.Controllers
             {
                 try
                 {
-                   _repo.Update(member);
+                    _repo.Update(member);
                     _repo.SaveChanges();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -183,10 +183,10 @@ namespace Common.Controllers
 
         private bool MemberExists(int id)
         {
-            var member =  _repo.GetMemberByIdAsync(id);
+            var member = _repo.GetMemberByIdAsync(id);
             return member != null;
         }
-        
+
 
 
     }
