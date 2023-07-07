@@ -1,11 +1,11 @@
-﻿document.addEventListener("DOMContentLoaded", function () {
+﻿/*validao form*/
+document.addEventListener("DOMContentLoaded", function () {
     var inputs = document.querySelectorAll("[id^='validationServer']");
 
     for (var i = 0; i < inputs.length; i++) {
         var input = inputs[i];
         var inputId = input.getAttribute("id");
         var feedbackId = "feedback-" + inputId;
-
         input.addEventListener("focus", function () {
             var feedbackId = "feedback-" + this.getAttribute("id");
 
@@ -14,7 +14,6 @@
                 document.getElementById(feedbackId).innerText = "Campo obrigatório.";
             }
         });
-
         input.addEventListener("input", function () {
             var feedbackId = "feedback-" + this.getAttribute("id");
 

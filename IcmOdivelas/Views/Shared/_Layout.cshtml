@@ -7,158 +7,43 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/IcmOdivelas.styles.css" asp-append-version="true" />
-
-    <!--========== BOX ICONS ==========-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <link rel="stylesheet" href="~/node_modules/bootstrap/dist/css/bootstrap.min.css" />
 
 </head>
 <body>
-    <!--========== Siderbar ==========-->
-        <header>
-        <div class="container-fluid">
-            <nav class="navbar navbar-expand-sm navbar-dark bg-dark border-bottom box-shadow mb-3 navbar-custom rounded">
-                <div class="container-fluid">
-                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">ICM Odivelas</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Members" asp-action="Create">Register</a>
-                            @*</li>
-                            <li class="nav-item">
-                                <a class="nav-link" asp-area="" asp-controller="Members" asp-action="Login">Login</a>
-                            </li>*@
-                        </ul>
-                       @* <ul class="navbar-nav ml-auto">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Grupos de Assistencia
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupA">Grupo A</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupB">Grupo B</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupC">Grupo C</a></li>
-                                    <li><a class="dropdown-item" asp-controller="Groups" asp-action="GroupD">Grupo D</a></li>
 
-                                </ul>
-                            </li>
-                        </ul>*@
-                    </div>
-                    <ul class="navbar-nav ms-auto">
+    <!-- Navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg fixed-top py-3">
+            <div class="container">
+                <a asp-controller="Home" asp-action="Index" class="navbar-brand text-uppercase font-weight-bold">ICM Odivelas</a>
+                <button type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" class="navbar-toggler navbar-toggler-right"><i class="fa fa-bars"></i></button>
+
+                <div id="navbarSupportedContent" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active"><a asp-controller="Home" asp-action="Index" class="nav-link text-uppercase font-weight-bold">Home</a></li>
+                        <li class="nav-item"><a asp-controller="Members" asp-action="Create" class="nav-link text-uppercase font-weight-bold">Create</a></li>
+                        <li class="nav-item"><a asp-controller="Members" asp-action="Index" class="nav-link text-uppercase font-weight-bold">Member List</a></li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Entrar
-                            </a>
-                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                <li><a class="dropdown-item" asp-controller="Members" asp-action="Login">Login</a></li>
-                                <li><a class="dropdown-item" href="#">Logout</a></li>
-                            </ul>
+                            <a href="#" class="nav-link dropdown-toggle text-uppercase font-weight-bold" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Dropdown Item 1</a>
+                                <a class="dropdown-item" href="#">Dropdown Item 2</a>
+                                <a class="dropdown-item" href="#">Dropdown Item 3</a>
+                            </div>
                         </li>
+                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Portfolio</a></li>
+                        <li class="nav-item"><a href="#" class="nav-link text-uppercase font-weight-bold">Contact</a></li>
                     </ul>
                 </div>
-            </nav>
-        </div>
-
-    </header>
-   @* <header class="header">
-        <div class="header__container">
-            <img src="/image/Odivelas1.jpeg" alt="" class="header__img">
-
-            <a href="#" class="header__logo">ICM ODivelas</a>
-
-            <div class="header__search">
-                <input type="search" placeholder="Search" class="header__input">
-                <i class='bx bx-search header__icon'></i>
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link text-uppercase font-weight-bold">Login</a>
+                    </li>
+                </ul>
             </div>
-
-            <div class="header__toggle">
-                <i class='bx bx-menu' id="header-toggle"></i>
-            </div>
-        </div>
-    </header>*@
-
-    <!--========== NAV ==========-->
-    <div class="nav" id="navbar">
-        <nav class="nav__container">
-            <div>
-                <a href="#" class="nav__link nav__logo">
-                    <i class='bx bxs-disc nav__icon'></i>
-                    <span class="nav__logo-name">Odivelas</span>
-                </a>
-
-                <div class="nav__list">
-                    <div class="nav__items">
-                        <h3 class="nav__subtitle">Profile</h3>
-                        <a asp-controller="Home" asp-action="Index" class="nav__link active">
-                            <i class='bx bx-home nav__icon'></i>
-                            <span class="nav__name">Home</span>
-                        </a>
-
-                        <div class="nav__dropdown">
-                            <a href="#" class="nav__link">
-                                <i class='bx bx-user nav__icon'></i>
-                                <span class="nav__name">Profile</span>
-                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
-                            </a>
-
-                            <div class="nav__dropdown-collapse">
-                                <div class="nav__dropdown-content">
-                                <a class="nav__dropdown-item" asp-area="" asp-controller="Members" asp-action="Login">Account</a>
-                               </div>
-                            </div>
-                        </div>
-
-                        <a href="#" class="nav__link">
-                            <i class='bx bx-message-rounded nav__icon'></i>
-                            <span class="nav__name">Messages</span>
-                        </a>
-                    </div>
-
-                    <div class="nav__items">
-                        <h3 class="nav__subtitle">Menu</h3>
-
-                        <div class="nav__dropdown">
-                            <a href="#" class="nav__link">
-                                <i class='bx bx-bell nav__icon'></i>
-                                <span class="nav__name">Grupos de Assistencia</span>
-                                <i class='bx bx-chevron-down nav__icon nav__dropdown-icon'></i>
-                            </a>
-
-                            <div class="nav__dropdown-collapse">
-                                <div class="nav__dropdown-content">
-                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupA">Grupo A</a>
-                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupB">Grupo B</a>
-                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupC">Grupo C</a>
-                                    <a class="nav__dropdown-item" asp-controller="Groups" asp-action="GroupD">Grupo D</a>
-                                </div>
-                            </div>
-
-                        </div>
-
-                        <a href="#" class="nav__link">
-                            <i class='bx bx-compass nav__icon'></i>
-                            <span class="nav__name">Explore</span>
-                        </a>
-                        <a href="#" class="nav__link">
-                            <i class='bx bx-bookmark nav__icon'></i>
-                            <span class="nav__name">Saved</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <a href="#" class="nav__link nav__logout">
-                <i class='bx bx-log-out nav__icon'></i>
-                <span class="nav__name">Log Out</span>
-            </a>
         </nav>
-    </div>
+    </header>
 
 
     <div class="container">
@@ -169,14 +54,15 @@
     <footer>
         @Html.Partial("Footer")
     </footer>
-
    
     @await RenderSectionAsync("Scripts", required: false)
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="~/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+
 </body>
 </html>
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-<script src="~/js/site.js" asp-append-version="true"></script>
 
 

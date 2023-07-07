@@ -77,7 +77,9 @@ namespace IcmOdivelas.Controllers
             {
                 _repo.Add(member);
                 _repo.SaveChanges();
+                TempData["AletMessage"] = "Member Register Successfull...!";
                 return RedirectToAction(nameof(Index));
+                
             }
             await _repo.ListDropdowns(ViewData, member.CategoryId, member.GroupId, member.SituationId);
 
